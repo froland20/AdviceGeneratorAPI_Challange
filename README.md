@@ -24,7 +24,7 @@ Users should be able to:
 ### Screenshot
 
 ![Random Advice #1](https://i.imgur.com/67Iciae.png)
-![Random Advice #2](https://i.imgur.com/52vhRQQ.png)
+![Random Advice #2](https://i.imgur.com/9y1hXm3.png)
 
 ## My process
 
