@@ -1,34 +1,102 @@
-html,
-body {
-    background-color: hsl(218, 23%, 16%) !important;
-    font-size: 28px;
-    font-family: 'Manrope', sans-serif !important;
+:root {
+    /* Primary */
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    /* Neutral */
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+    /* Animation */
+    --main-transition: all 0.3s ease;
+    /* Standard */
 }
 
-.custom-advice {
-    background-color: hsl(217, 19%, 24%);
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--dark-blue);
+}
+
+.container {
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: var(--dark-grayish-blue);
     border-radius: 15px;
+    padding: 20px;
+}
+
+@media (max-width: 767px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+.card {
+    position: relative;
+}
+
+.card .content {
+    padding-top: 20px;
+}
+
+.card .advice-head {
+    margin-bottom: 25px;
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--neon-green);
+}
+
+.card q {
+    color: var(--light-cyan);
+    font-size: 28px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.card .divider {
+    width: 90%;
+    height: 18px;
+    margin: 30px auto 50px;
+}
+
+.divider img {
+    height: 100%;
+    width: 100%;
 }
 
 .dice {
-    height: 50px;
-    width: 50px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--neon-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
     border-radius: 50%;
-    padding: 12px;
-    background-color: hsl(150, 100%, 66%);
+    position: absolute;
+    left: 50%;
+    transform: translate(-47%, -15%);
+    cursor: pointer;
+    transition: var(--main-transition);
 }
 
-a:hover.dice-effect {
-    border-radius: 50%;
-    box-shadow: 0px 0px 30px 10px hsl(150, 100%, 66%);
+.dice:hover {
+    box-shadow: 0px 0px 20px 2px var(--neon-green);
+    -webkit-box-shadow: 0px 0px 20px 2px var(--neon-green);
+    -moz-box-shadow: 0px 0px 20px 2px var(--neon-green);
 }
 
-.pattern-devider {
-    content: url('images/pattern-divider-desktop.svg');
-}
-
-@media screen and (max-width: 375px) {
-    .pattern-devider {
-        content: url('images/pattern-divider-mobile.svg');
-    }
+.dice img {
+    width: 30px;
 }

@@ -1,6 +1,6 @@
-const advID = document.querySelector('#id');
-const advText = document.querySelector('#advice');
-const resBtn = document.querySelector('#getData');
+const advID = document.querySelector('.content span');
+const advText = document.querySelector('.content q');
+const resBtn = document.querySelector('.dice');
 
 resBtn.addEventListener('click', () => {
     getAdvice();
@@ -15,8 +15,8 @@ function getAdvice() {
         return response.json();
     }).then(adviceData => {
         const Adviceobj = adviceData.slip;
-        advID.innerHTML = `<p>Advice #${Adviceobj.id}</p>`;
-        advText.innerHTML = `<p>"${Adviceobj.advice}"</p>`;
+        advID.innerHTML = `Advice #${Adviceobj.id}`;
+        advText.innerHTML = `${Adviceobj.advice}`;
     }).catch(error => {
         console.log(error);
     });
